@@ -7,8 +7,17 @@
  * @return {string}
  */
 var defangIPaddr = function (address) {
-    let s = address.replace(/\./gi, '[.]')
-    return s
+    let result = ''
+    let teamplate = '[.]'
+
+    for (let letter in address) {
+        if (address[letter] === '.') {
+            result += teamplate
+            continue
+        }
+        result += address[letter]
+    }
+    return result
 };
 
 console.log(defangIPaddr('1.1.1.1'))
