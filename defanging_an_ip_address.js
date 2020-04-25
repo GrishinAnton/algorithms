@@ -8,14 +8,14 @@
  */
 var defangIPaddr = function (address) {
     let result = ''
-    let teamplate = '[.]'
+    let template = '[.]'
 
     for (let letter in address) {
         if (address[letter] === '.') {
-            result += teamplate
-            continue
+            result += template
+        } else {
+            result += address[letter]
         }
-        result += address[letter]
     }
     return result
 };
