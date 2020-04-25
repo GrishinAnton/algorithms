@@ -7,7 +7,7 @@
  * @param {string} S
  * @return {number}
  */
-/** Решение цикл в цикле - сложность N * N */
+
 var numJewelsInStones = function (J, S) {
     let result = 0
     for (let letterJ in J) {
@@ -17,5 +17,16 @@ var numJewelsInStones = function (J, S) {
     }
     return result
 };
+
+/** Решение цикл в цикле - сложность N^2 */
+// var numJewelsInStones = function (J, S) {
+//     let result = 0
+//     for (let letterJ in J) {
+//         for (let letterS in S) {
+//             if (J[letterJ] === S[letterS]) result++
+//         }
+//     }
+//     return result
+// };
 
 console.log(numJewelsInStones("aA", "aAAbbbb"))
