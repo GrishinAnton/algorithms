@@ -11,7 +11,10 @@
  * @return {string}
  */
 var toLowerCase = function (str) {
-    let result = ''
+    // Сложность с массивом O(n)
+    let result = []
+    //Сложность со строкой O(n^2)
+    // let result = ''
     const A = 'A'.charCodeAt(0)
     const Z = 'Z'.charCodeAt(0)
 
@@ -20,12 +23,12 @@ var toLowerCase = function (str) {
     for (let i = 0; i < str.length; i++) {
         let current = str.charCodeAt(i)
         if (isLetterCapital(current)) {
-            result += String.fromCharCode(current + 32)
-            continue
+            result.push(String.fromCharCode(current + 32))
+        } else {
+            result.push(str[i])
         }
-        result += str[i]
     }
-    return result
+    return result.join('')
 };
 
 console.log(toLowerCase("Hello"))
