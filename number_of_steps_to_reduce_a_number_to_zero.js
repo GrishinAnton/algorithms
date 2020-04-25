@@ -13,7 +13,6 @@
  * При итеративном варианте сложность O(log n * log n), в этом варианте не используется стек для памяти, как в рекурсивном.
  */
 //итеративный вариант
-
 var numberOfSteps = (num) => {
     let summ = 0;
     while (num !== 0) {
@@ -24,14 +23,14 @@ var numberOfSteps = (num) => {
 }
 
 //рекурсивный вариант
-var numberOfSteps = function (num, summ = 0) {
+// var numberOfSteps = function (num, summ = 0) {
 
-    if (num === 0) {
-        return summ
-    }
-    return num % 2 === 0 ? numberOfSteps(num / 2, summ += 1) : numberOfSteps(num - 1, summ += 1)
+//     if (num === 0) {
+//         return summ
+//     }
+//     return num % 2 === 0 ? numberOfSteps(num / 2, summ += 1) : numberOfSteps(num - 1, summ += 1)
 
-};
+// };
 
 console.log(numberOfSteps(8))
 
