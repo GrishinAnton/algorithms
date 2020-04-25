@@ -7,12 +7,18 @@
  * @param {string} S
  * @return {number}
  */
-
+//Решение с одним циклом и хеш-таблицей. Сложность O(N * log N)
 var numJewelsInStones = function (J, S) {
-    let result = 0
+    let result = []
+    let buffer = {}
+
     for (let letterJ in J) {
-        for (let letterS in S) {
-            if (J[letterJ] === S[letterS]) result++
+        buffer[J[letterJ].charCodeAt(0)] = J[letterJ]
+    }
+
+    for (let letterS in S) {
+        if (buffer[S[letterS].charCodeAt(0)]) {
+            result += 1
         }
     }
     return result
