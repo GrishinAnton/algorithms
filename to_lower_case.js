@@ -12,7 +12,10 @@
  */
 var toLowerCase = function (str) {
     let result = ''
-    const isLetterCapital = current => current >= 65 && current <= 90
+    const A = 'A'.charCodeAt(0)
+    const Z = 'Z'.charCodeAt(0)
+
+    const isLetterCapital = ch => ch >= A && ch <= Z
 
     for (let i = 0; i < str.length; i++) {
         let current = str.charCodeAt(i)
