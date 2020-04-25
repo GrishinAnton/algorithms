@@ -1,0 +1,10 @@
+{
+  "name": "algorithms",
+  "version": "1.0.0",
+  "repository": "git@github.com:GrishinAnton/algorithms.git",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "parse-comments": "^1.0.0"
+  }
+}

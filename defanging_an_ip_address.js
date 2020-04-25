@@ -1,4 +1,10 @@
 /**
+ * 1108. Defanging an IP Address
+ * @namespace LEETCODE
+ * @link https://leetcode.com/problems/defanging-an-ip-address/
+ */
+
+/**
     Input: address = "1.1.1.1"
     Output: "1[.]1[.]1[.]1"
     Input: address = "255.100.50.0"
