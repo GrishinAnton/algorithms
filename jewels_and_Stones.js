@@ -1,4 +1,10 @@
 /**
+ * 771. Jewels and Stones
+ * @namespace LEETCODE
+ * @link https://leetcode.com/problems/jewels-and-stones/
+ */
+
+/**
     Input: J = "aA", S = "aAAbbbb"
     Output: 3
     Input: J = "z", S = "ZZ"
