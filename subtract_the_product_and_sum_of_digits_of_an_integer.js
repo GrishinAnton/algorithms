@@ -15,7 +15,7 @@ function numberTransform(n) {
 
     while (currentNumber > 0) {
         let baseNum = Math.floor(currentNumber / base)
-        let diff = currentNumber - baseNum * base
+        let diff = currentNumber % base
         result.push(diff)
         currentNumber = baseNum
     }
@@ -29,13 +29,13 @@ var subtractProductAndSum = function (n) {
     let bufferArrNumber = numberTransform(n)
 
     for (let a in bufferArrNumber) {
-        summ += +bufferArrNumber[a]
+        summ += bufferArrNumber[a]
         multi *= bufferArrNumber[a]
     }
     return multi - summ
 };
 
-console.log(subtractProductAndSum(234))
+console.log(subtractProductAndSum(4421))
 
 /**
  Example 1:
