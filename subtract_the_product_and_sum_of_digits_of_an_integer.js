@@ -1,26 +1,41 @@
 /**
  * 1281. Subtract the Product and Sum of Digits of an Integer
  * @namespace LEETCODE
- * @link https://leetcode.com/problems/number-of-steps-to-reduce-a-number-to-zero
+ * @link https://leetcode.com/problems/subtract-the-product-and-sum-of-digits-of-an-integer
  */
 /**
  * @param {number} n
  * @return {number}
  */
-// Слжность О(n)
+// Сложность О(n^2)
+function numberTransform(n) {
+    let result = []
+    let base = 10
+    let currentNumber = Math.abs(n)
+
+    while (currentNumber > 0) {
+        let baseNum = Math.floor(currentNumber / base)
+        let diff = currentNumber - baseNum * base
+        result.push(diff)
+        currentNumber = baseNum
+    }
+
+    return result.reverse()
+}
+
 var subtractProductAndSum = function (n) {
     let summ = 0
     let multi = 1
-    let bufferStr = n + ''
+    let bufferArrNumber = numberTransform(n)
 
-    for (let a in bufferStr) {
-        summ += +bufferStr[a]
-        multi *= bufferStr[a]
+    for (let a in bufferArrNumber) {
+        summ += +bufferArrNumber[a]
+        multi *= bufferArrNumber[a]
     }
     return multi - summ
 };
 
-console.log(subtractProductAndSum(4421))
+console.log(subtractProductAndSum(234))
 
 /**
  Example 1:
