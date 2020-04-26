@@ -7,16 +7,16 @@
  * @param {number} n
  * @return {number}
  */
-// Сложность О(n^2)
+// Сложность О(n)
 function numberTransform(n) {
     let result = []
     let base = 10
-    let currentNumber = Math.abs(n)
+    let currentNumber = n
 
     while (currentNumber > 0) {
         let baseNum = Math.floor(currentNumber / base)
-        let diff = currentNumber % base
-        result.push(diff)
+        let digit = currentNumber % base
+        result.push(digit)
         currentNumber = baseNum
     }
 
