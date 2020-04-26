@@ -8,22 +8,20 @@
 * @param {number[]} nums
 * @return {number}
 */
-// Сложность задачи O(n)
-// Сложность функции O(1)
+// Сложность по времени O(n)
 function numberLength(n){
-    let result = []
+    let result = 0
     let base = 10
     let currentNumber = n
 
     while(currentNumber > 0){
         let baseNum = Math.floor(currentNumber / base)
-        let digit = currentNumber % base
-        result.push(digit)
         currentNumber = baseNum
+        result++
     }
-    return result.length
+    return result
 }
-//  Сложность функции O(n)
+
 var findNumbers = function (nums) {
     let count = 0
 
@@ -35,7 +33,7 @@ var findNumbers = function (nums) {
     return count
 };
 
-console.log(findNumbers([555, 901, 482, 1771]))
+console.log(findNumbers([12, 345, 2, 6, 7896]))
 
 
  /**
