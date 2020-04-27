@@ -9,24 +9,16 @@
 * @return {number}
 */
 // Сложность по времени O(n)
-// function numberLength(n){
-//     let result = 0
-//     let base = 10
-//     let currentNumber = n
+function numberLength(n){
 
-//     while(currentNumber > 0){
-//         let baseNum = Math.floor(currentNumber / base)
-//         currentNumber = baseNum
-//         result++
-//     }
-//     return result
-// }
+    return Math.floor(Math.log10(n)) + 1
+}
 
 var findNumbers = function (nums) {
     let count = 0
 
     for(let item in nums){
-        if ((Math.floor(Math.log10(nums[item])) + 1) % 2 === 0){
+        if (numberLength(nums[item]) % 2 === 0){
             count ++
         }
     }
