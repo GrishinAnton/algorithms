@@ -1,10 +1,8 @@
-/*
- * @lc app=leetcode id=938 lang=javascript
- *
- * [938] Range Sum of BST
+/**
+ * 938. Range Sum of BST
+ * @namespace LEETCODE
+ * @link https://leetcode.com/problems/range-sum-of-bst
  */
-
-// @lc code=start
 /**
  * Definition for a binary tree node.
  * function TreeNode(val) {
@@ -18,8 +16,8 @@
  * @param {number} R
  * @return {number}
  */
-var rangeSumBST = function(root, L, R) {
-    
+var rangeSumBST = function (root, L, R) {
+
 };
 // @lc code=end
 
