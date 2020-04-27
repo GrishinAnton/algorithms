@@ -10,7 +10,6 @@
 */
 // Сложность по времени O(n)
 function numberLength(n){
-
     return Math.floor(Math.log10(n)) + 1
 }
 
