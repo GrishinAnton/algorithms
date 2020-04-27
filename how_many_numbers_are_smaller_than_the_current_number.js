@@ -8,7 +8,7 @@
 * @param {number[]} nums
 * @return {number[]}
 */
-// Сложность по времени O(n)
+// Сложность по времени O(n * log n) сложность по памяти O(n)
 var smallerNumbersThanCurrent = function (nums) {
     let sortedNums = [...nums].sort((a, b) => a - b)
     let buffer = {}
