@@ -7,7 +7,7 @@
  * @param {number[]} nums
  * @return {number[]}
  */
-//  Сложность по времени O(n)
+//  Сложность по времени O(n * m)
 var decompressRLElist = function (nums) {
     let result = []
 
