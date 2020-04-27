@@ -32,12 +32,13 @@ function summNode(first, second) {
 
     return first === null ? second : first
 }
+
 var mergeTrees = function (t1, t2) {
     let result = []
     let maxArrLength = []
     let minArrLength = []
 
-    if (t1.lenght >= t2.length) {
+    if (t1.length >= t2.length) {
         maxArrLength = t1
         minArrLength = t2
     } else {
