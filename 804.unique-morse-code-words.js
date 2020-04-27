@@ -14,7 +14,7 @@
  * @param {string[]} words
  * @return {number}
  */
-//Сложность алгоритма O(2n^2) Сложность по помяти O(n)
+//Сложность алгоритма O(n * m) Сложность по помяти O(n)
 var uniqueMorseRepresentations = function (words) {
     const dic = {
         'a': '.-',
@@ -47,11 +47,11 @@ var uniqueMorseRepresentations = function (words) {
     const result = new Set()
 
     for (let i = 0; i < words.length; i++) {
-        let bufferStr = ''
+        let bufferStr = []
         for (let j = 0; j < words[i].length; j++) {
-            bufferStr += dic[words[i][j]]
+            bufferStr.push(dic[words[i][j]])
         }
-        result.add(bufferStr)
+        result.add(bufferStr.join(''))
     }
     return result.size
 
