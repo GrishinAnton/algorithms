@@ -14,7 +14,7 @@
  * @param {string[]} words
  * @return {number}
  */
-
+//Сложность алгоритма O(2n^2) Сложность по помяти O(n)
 var uniqueMorseRepresentations = function (words) {
     const dic = {
         'a': '.-',
