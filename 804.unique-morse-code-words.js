@@ -14,14 +14,53 @@
  * @param {string[]} words
  * @return {number}
  */
-var uniqueMorseRepresentations = function (words) {
 
-};
+var uniqueMorseRepresentations = function (words) {
+    const dic = {
+        'a': '.-',
+        'b': '-...',
+        'w': '.--',
+        'g': '--.',
+        'd': '-..',
+        'e': '.',
+        'v': '...-',
+        'z': '--..',
+        'i': '..',
+        'j': '.---',
+        'k': '-.-',
+        'l': '.-..',
+        'm': '--',
+        'n': '-.',
+        'o': '---',
+        'p': '.--.',
+        'r': '.-.',
+        's': '...',
+        't': '-',
+        'u': '..-',
+        'f': '..-.',
+        'h': '....',
+        'c': '-.-.',
+        'q': '--.-',
+        'y': '-.--',
+        'x': '-..-'
+    };
+    const result = new Set()
+
+    for (let i = 0; i < words.length; i++) {
+        let bufferStr = ''
+        for (let j = 0; j < words[i].length; j++) {
+            bufferStr += dic[words[i][j]]
+        }
+        result.add(bufferStr)
+    }
+    return result.size
+
+}
 // @lc code=end
 
 /**
  * Example:
-Input: words = ["gin", "zen", "gig", "msg"]
+Input: words =
 Output: 2
 Explanation:
 The transformation of each word is:
