@@ -22,31 +22,39 @@
  * @param {TreeNode} t2
  * @return {TreeNode}
  */
-//Сложность O(n + m)
+//Сложность O(n)
 //где n это ноды, а m это ребра.
-let ss = {
-    val: 1,
-    left: {
-        val: 3,
-        left: { val: 5, left: null, right: null },
-        right: null
-    },
-    right: { val: 2, left: null, right: null }
-}
+// let ss = {
+//     val: 1,
+//     left: {
+//         val: 3,
+//         left: {
+//             val: 5,
+//             left: null,
+//             right: null
+//         },
+//         right: null
+//     },
+//     right: { val: 2, left: null, right: null }
+// }
 
-let zz = {
-    val: 2,
-    left: {
-        val: 1,
-        left: null,
-        right: { val: 4, left: null, right: null }
-    },
-    right: {
-        val: 3,
-        left: null,
-        right: { val: 7, left: null, right: null }
-    }
-}
+// let zz = {
+//     val: 2,
+//     left: {
+//         val: 1,
+//         left: null,
+//         right: {
+//             val: 4,
+//             left: null,
+//             right: null
+//         }
+//     },
+//     right: {
+//         val: 3,
+//         left: null,
+//         right: { val: 7, left: null, right: null }
+//     }
+// }
 var mergeTrees = function (t1, t2) {
     debugger
     if (t1 == null) return t2;
@@ -57,17 +65,6 @@ var mergeTrees = function (t1, t2) {
     t1.right = mergeTrees(t1.right, t2.right);
     return t1;
 };
-console.log(mergeTrees(ss, zz))
-/**
- {
-    val: 1,
-    left: {
-        val: 3,
-        left: { val: 5, left: null, right: null },
-        right: null
-    },
-    right: { val: 2, left: null, right: null }}
- */
+// console.log(mergeTrees(ss, zz))
 
 // @lc code=end
-
