@@ -56,7 +56,6 @@
 //     }
 // }
 var mergeTrees = function (t1, t2) {
-    debugger
     if (t1 == null) return t2;
     if (t2 == null) return t1;
 
