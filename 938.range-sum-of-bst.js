@@ -41,24 +41,23 @@ let tt = {
         right: { val: 18, left: null, right: null }
     }
 }
-var rangeSumBST = function (root, L, R, summ = 0) {
-
-
+var rangeSumBST = function (root, L, R, summ = { summ: 0 }) {
+    // debugger
+    // console.log(summ) 
     if (root === null) {
         return null
     }
     if (root.val >= L && root.val <= R) {
-        summ += root.val
+        summ.summ = summ.summ + root.val
     }
 
-    root.left = rangeSumBST(root.left, L, R, summ)
-    root.right = rangeSumBST(root.right, L, R, summ)
+    rangeSumBST(root.left, L, R, summ)
+    rangeSumBST(root.right, L, R, summ)
 
-    return summ
+    return Object.values(summ)[0]
 };
 
 console.log(rangeSumBST(tt, 7, 15));
-console.log(summ);
 
 
 // @lc code=end
