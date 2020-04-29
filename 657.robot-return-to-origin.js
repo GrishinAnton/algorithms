@@ -9,6 +9,7 @@
  * @param {string} moves
  * @return {boolean}
  */
+//Сложность  O(n)
 var judgeCircle = function (moves) {
     let vertical = 0
     let horizontal = 0
