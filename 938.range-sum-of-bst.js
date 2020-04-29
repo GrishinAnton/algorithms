@@ -24,40 +24,53 @@
  * @return {number}
  */
 let tt = {
+
     val: 10,
+
     left:
+
     {
 
         val: 5,
 
-        left: { val: 3, left: null, right: null },
+        left: { val: 3, left: { val: 1, left: null, right: null }, right: null },
 
-        right: { val: 7, left: null, right: null }
+        right: { val: 7, left: { val: 6, left: null, right: null }, right: null }
     },
+
     right:
+
     {
+
         val: 15,
-        left: null,
+
+        left: { val: 13, left: null, right: null },
+
         right: { val: 18, left: null, right: null }
     }
 }
-var rangeSumBST = function (root, L, R, summ = { summ: 0 }) {
+var rangeSumBST = function (root, L, R, ) {
     // debugger
-    // console.log(summ) 
+    // console.log(root)
+
     if (root === null) {
-        return null
-    }
-    if (root.val >= L && root.val <= R) {
-        summ.summ = summ.summ + root.val
+        return 0
     }
 
-    rangeSumBST(root.left, L, R, summ)
-    rangeSumBST(root.right, L, R, summ)
 
-    return Object.values(summ)[0]
+    rangeSumBST(root.left, L, R)
+    rangeSumBST(root.right, L, R)
+
+    var z = 0
+    if (root.val > L && root.val < R) {
+
+        z = root.val
+    }
+
+    return R + L + z
 };
 
-console.log(rangeSumBST(tt, 7, 15));
+console.log(rangeSumBST(tt, 6, 10));//23
 
 
 // @lc code=end
