@@ -23,55 +23,52 @@
  * @param {number} R
  * @return {number}
  */
-let tt = {
+// let tt = {
 
-    val: 10,
+//     val: 10,
 
-    left:
+//     left:
 
-    {
+//     {
 
-        val: 5,
+//         val: 5,
 
-        left: { val: 3, left: { val: 1, left: null, right: null }, right: null },
+//         left: { val: 3, left: { val: 1, left: null, right: null }, right: null },
 
-        right: { val: 7, left: { val: 6, left: null, right: null }, right: null }
-    },
+//         right: { val: 7, left: { val: 6, left: null, right: null }, right: null }
+//     },
 
-    right:
+//     right:
 
-    {
+//     {
 
-        val: 15,
+//         val: 15,
 
-        left: { val: 13, left: null, right: null },
+//         left: { val: 13, left: null, right: null },
 
-        right: { val: 18, left: null, right: null }
-    }
-}
+//         right: { val: 18, left: null, right: null }
+//     }
+// }
+
+/**
+ * Сложность O(n) где n кол-во нод
+ */
 var rangeSumBST = function (root, L, R, ) {
-    // debugger
-    // console.log(root)
+    let result = 0
 
     if (root === null) {
         return 0
     }
 
-
-    rangeSumBST(root.left, L, R)
-    rangeSumBST(root.right, L, R)
-
-    var z = 0
-    if (root.val > L && root.val < R) {
-
-        z = root.val
+    if (root.val >= L && root.val <= R) {
+        result += root.val
     }
 
-    return R + L + z
+    result += rangeSumBST(root.left, L, R)
+    result += rangeSumBST(root.right, L, R)
+
+    return result
 };
-
-console.log(rangeSumBST(tt, 6, 10));//23
-
-
+// console.log(rangeSumBST(tt, 6, 10));//23
 // @lc code=end
 
