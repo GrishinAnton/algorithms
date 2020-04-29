@@ -27,26 +27,43 @@ let tt = {
         right: { val: 7, left: null, right: null }
     }
 }
+//Обход в глубину
 var maxDepth = function (root) {
-    if (!root) return 0
+    if (!root || root === null) return 0
+    let levelLeft = 0
+    let levelRight = 0
 
-    let level = 1
-    let q = [[root, level]]
+    levelLeft++
+    levelRight++
 
-
-    while (q.length > 0) {
-        let node = q.shift()
-        level = node[1]
-
-
-        node[0].left && q.push([node[0].left, level + 1])
-        node[0].right && q.push([node[0].right, level + 1])
-
-    }
-    return level
+    levelLeft += maxDepth(root.left)
+    levelRight += maxDepth(root.right)
+    return levelLeft > levelRight ? levelLeft : levelRight
 
 };
 console.log(maxDepth(tt));
+//Сложность O(n)
+// Обход в ширину
+// var maxDepth = function (root) {
+//     if (!root) return 0
+
+//     let level = 1
+//     let q = [[root, level]]
+
+
+//     while (q.length > 0) {
+//         let node = q.shift()
+//         level = node[1]
+
+
+//         node[0].left && q.push([node[0].left, level + 1])
+//         node[0].right && q.push([node[0].right, level + 1])
+
+//     }
+//     return level
+
+// };
+// console.log(maxDepth(tt));
 
 // @lc code=end
 
