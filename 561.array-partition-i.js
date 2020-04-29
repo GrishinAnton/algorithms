@@ -1,3 +1,8 @@
+/**
+ * 561. Array Partition I
+ * @namespace LEETCODE
+ * @link https://leetcode.com/problems/array-partition-i/submissions/
+ */
 /*
  * @lc app=leetcode id=561 lang=javascript
  *
@@ -9,6 +14,7 @@
  * @param {number[]} nums
  * @return {number}
  */
+//Сложность O(n)
 var arrayPairSum = function (nums) {
     nums.sort((a, b) => a - b)
     let result = 0
