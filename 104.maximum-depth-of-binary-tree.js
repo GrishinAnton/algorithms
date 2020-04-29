@@ -29,16 +29,10 @@ let tt = {
 }
 //Обход в глубину
 var maxDepth = function (root) {
-    if (!root || root === null) return 0
-    let levelLeft = 0
-    let levelRight = 0
+    debugger
+    if (!root) return 0
 
-    levelLeft++
-    levelRight++
-
-    levelLeft += maxDepth(root.left)
-    levelRight += maxDepth(root.right)
-    return levelLeft > levelRight ? levelLeft : levelRight
+    return 1 + Math.max(maxDepth(root.left), maxDepth(root.right));
 
 };
 console.log(maxDepth(tt));
