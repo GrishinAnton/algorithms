@@ -36,11 +36,11 @@ var maxDepth = function (root) {
 
     while (q.length > 0) {
         let node = q.shift()
-        let currentLevel = level = node[1]
+        level = node[1]
 
 
-        node[0].left && q.push([node[0].left, currentLevel + 1])
-        node[0].right && q.push([node[0].right, currentLevel + 1])
+        node[0].left && q.push([node[0].left, level + 1])
+        node[0].right && q.push([node[0].right, level + 1])
 
     }
     return level
