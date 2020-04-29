@@ -17,9 +17,37 @@
  * @param {TreeNode} root
  * @return {number}
  */
+let tt = {
+    val: 3,
+    left: { val: 9, left: null, right: null },
+    right:
+    {
+        val: 20,
+        left: { val: 15, left: null, right: null },
+        right: { val: 7, left: null, right: null }
+    }
+}
 var maxDepth = function (root) {
+    if (!root) return 0
+
+    let level = 1
+    let q = [[root, level]]
+
+
+    while (q.length > 0) {
+        let node = q.shift()
+        let currentLevel = level = node[1]
+
+
+        node[0].left && q.push([node[0].left, currentLevel + 1])
+        node[0].right && q.push([node[0].right, currentLevel + 1])
+
+    }
+    return level
 
 };
+console.log(maxDepth(tt));
+
 // @lc code=end
 
 
