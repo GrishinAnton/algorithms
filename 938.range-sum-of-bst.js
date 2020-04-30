@@ -1,9 +1,4 @@
 /**
- * 938. Range Sum of BST
- * @namespace LEETCODE
- * @link https://leetcode.com/problems/range-sum-of-bst
- */
-/*
  * @lc app=leetcode id=938 lang=javascript
  *
  * [938] Range Sum of BST

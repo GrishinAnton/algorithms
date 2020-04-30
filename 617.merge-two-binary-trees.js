@@ -1,9 +1,4 @@
 /**
- * 617. Merge Two Binary Trees
- * @namespace LEETCODE
- * @link https://leetcode.com/problems/merge-two-binary-trees
- */
-/*
  * @lc app=leetcode id=617 lang=javascript
  *
  * [617] Merge Two Binary Trees

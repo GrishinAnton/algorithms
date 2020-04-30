@@ -1,4 +1,4 @@
-/*
+/**
  * @lc app=leetcode id=657 lang=javascript
  *
  * [657] Robot Return to Origin

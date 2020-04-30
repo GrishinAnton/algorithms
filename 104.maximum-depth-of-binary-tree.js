@@ -1,4 +1,4 @@
-/*
+/**
  * @lc app=leetcode id=104 lang=javascript
  *
  * [104] Maximum Depth of Binary Tree

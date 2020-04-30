@@ -1,7 +1,7 @@
 /**
- * 1281. Subtract the Product and Sum of Digits of an Integer
- * @namespace LEETCODE
- * @link https://leetcode.com/problems/subtract-the-product-and-sum-of-digits-of-an-integer
+ * @lc app=leetcode id=1281 lang=javascript
+ *
+ * [1281] Subtract the Product and Sum of Digits of an Integer
  */
 /**
  * @param {number} n

@@ -1,7 +1,7 @@
 /**
- * 709. To Lower Case
- * @namespace LEETCODE
- * @link https://leetcode.com/problems/to-lower-case/
+ * @lc app=leetcode id=709 lang=javascript
+ *
+ * [709] To Lower Case
  */
 
 /**
