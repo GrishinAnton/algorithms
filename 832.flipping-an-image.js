@@ -14,6 +14,7 @@
  * @param {number[][]} A
  * @return {number[][]}
  */
+//Сложность  O(n * m)
 var flipAndInvertImage = function (A) {
 
     return A.map(item => {
