@@ -1,7 +1,7 @@
 /**
- * 771. Jewels and Stones
- * @namespace LEETCODE
- * @link https://leetcode.com/problems/jewels-and-stones/
+ * @lc app=leetcode id=1295 lang=javascript
+ *
+ * [771] Jewels and Stones
  */
 
 /**

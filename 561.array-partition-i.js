@@ -1,9 +1,4 @@
 /**
- * 561. Array Partition I
- * @namespace LEETCODE
- * @link https://leetcode.com/problems/array-partition-i/submissions/
- */
-/*
  * @lc app=leetcode id=561 lang=javascript
  *
  * [561] Array Partition I

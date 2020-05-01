@@ -1,12 +1,7 @@
-/*
+/**
  * @lc app=leetcode id=804 lang=javascript
  *
  * [804] Unique Morse Code Words
- */
-/**
- * 804. Unique Morse Code Words
- * @namespace LEETCODE
- * @link https://leetcode.com/problems/unique-morse-code-words
  */
 
 // @lc code=start

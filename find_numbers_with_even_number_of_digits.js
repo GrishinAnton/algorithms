@@ -1,7 +1,7 @@
 /**
- * 1295. Find Numbers with Even Number of Digits
- * @namespace LEETCODE
- * @link https://leetcode.com/problems/find-numbers-with-even-number-of-digits/
+ * @lc app=leetcode id=1295 lang=javascript
+ *
+ * [1295] Find Numbers with Even Number of Digits
  */
 
 /**

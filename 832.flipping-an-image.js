@@ -1,9 +1,4 @@
 /**
- * 832. Flipping an Image
- * @namespace LEETCODE
- * @link https://leetcode.com/problems/flipping-an-image/
- */
-/*
  * @lc app=leetcode id=832 lang=javascript
  *
  * [832] Flipping an Image

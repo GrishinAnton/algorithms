@@ -1,7 +1,7 @@
 /**
- * 1108. Defanging an IP Address
- * @namespace LEETCODE
- * @link https://leetcode.com/problems/defanging-an-ip-address/
+ * @lc app=leetcode id=1108 lang=javascript
+ *
+ * [1108] Defanging an IP Address
  */
 
 /**

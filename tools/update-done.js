@@ -68,10 +68,7 @@ function processFile(file) {
         return reject(err);
       }
       const ast = comments.parse(data);
-      const root = ast.find(node => {
-        const namespace = node.tags.find(({ title }) => title === "namespace");
-        return namespace && namespace.name === "LEETCODE";
-      });
+      const root = ast.find(node => getLeetCodeTag(node));
 
       resolve(root && template(root));
     });
@@ -79,7 +76,13 @@ function processFile(file) {
 }
 
 function template(node) {
-  return `<a href="${
-    node.tags.find(({ title }) => title === "link").description
-  }">${node.description}</a>`;
+  const title = getLeetCodeTag(node).description.split('\n').pop();
+  const parts = title.split(' ');
+  parts.shift();
+  const id = parts.map(w => w.toLowerCase()).join('-');
+  return `<a href="https://leetcode.com/problems/${id}">${title}</a>`;
+}
+
+function getLeetCodeTag(node) {
+  return node.tags.find(({ title }) => title === "lc")
 }

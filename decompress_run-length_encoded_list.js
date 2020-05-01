@@ -1,7 +1,7 @@
 /**
- * 1313. Decompress Run-Length Encoded List
- * @namespace LEETCODE
- * @link https://leetcode.com/problems/decompress-run-length-encoded-list/
+ * @lc app=leetcode id=1313 lang=javascript
+ *
+ * [1313] Decompress Run-Length Encoded List
  */
 /**
  * @param {number[]} nums
