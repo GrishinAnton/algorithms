@@ -11,15 +11,40 @@ new Promise(function(resolve, reject) {
       return reject(err);
     }
     Promise.all(
-      files.filter(file => path.extname(file) === ".js").map(processFile)
-    ).then(resolve);
+      files
+        .filter(file => fs.lstatSync(file).isDirectory())
+        .map(folder => {
+          return new Promise(function(resolve, reject) {
+            fs.readdir(folder, function(err, files) {
+              if (err) {
+                return reject(err);
+              }
+              resolve(
+                files
+                  .filter(file => path.extname(file) === ".js")
+                  .map(file => path.join(folder, file))
+              );
+            });
+          });
+        })
+    )
+      .then(function(files) {
+        return Promise.all([].concat(...files).map(processFile));
+      })
+      .then(resolve)
+      .catch(reject);
   });
 })
   .then(messages => {
     const list = messages
       .filter(Boolean)
-      .map(link => `- ${link}`)
-      .concat("");
+      .reduce((acc, curr, index, arr) => {
+        if (index === 0 || curr[1] !== arr[index - 1][1]) {
+          acc += `### ${curr[1]}\n`;
+        }
+        acc += `- ${curr[0]}\n`;
+        return acc;
+      }, '');
 
     return new Promise(function(resolve, reject) {
       fs.readFile("README.md", "utf8", function(err, data) {
@@ -63,6 +88,7 @@ new Promise(function(resolve, reject) {
 
 function processFile(file) {
   return new Promise(function(resolve, reject) {
+    const currGroup = file.split('/').shift();
     fs.readFile(file, "utf8", function(err, data) {
       if (err) {
         return reject(err);
@@ -70,19 +96,21 @@ function processFile(file) {
       const ast = comments.parse(data);
       const root = ast.find(node => getLeetCodeTag(node));
 
-      resolve(root && template(root));
+      resolve(root && [template(root), currGroup]);
     });
   });
 }
 
 function template(node) {
-  const title = getLeetCodeTag(node).description.split('\n').pop();
-  const parts = title.split(' ');
+  const title = getLeetCodeTag(node)
+    .description.split("\n")
+    .pop();
+  const parts = title.split(" ");
   parts.shift();
-  const id = parts.map(w => w.toLowerCase()).join('-');
+  const id = parts.map(w => w.toLowerCase()).join("-");
   return `<a href="https://leetcode.com/problems/${id}">${title}</a>`;
 }
 
 function getLeetCodeTag(node) {
-  return node.tags.find(({ title }) => title === "lc")
+  return node.tags.find(({ title }) => title === "lc");
 }
