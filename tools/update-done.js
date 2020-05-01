@@ -38,8 +38,13 @@ new Promise(function(resolve, reject) {
   .then(messages => {
     const list = messages
       .filter(Boolean)
-      .map(link => `- ${link}`)
-      .concat("");
+      .reduce((acc, curr, index, arr) => {
+        if (index === 0 || curr[1] !== arr[index - 1][1]) {
+          acc += `### ${curr[1]}\n`;
+        }
+        acc += `- ${curr[0]}\n`;
+        return acc;
+      }, '');
 
     return new Promise(function(resolve, reject) {
       fs.readFile("README.md", "utf8", function(err, data) {
@@ -83,6 +88,7 @@ new Promise(function(resolve, reject) {
 
 function processFile(file) {
   return new Promise(function(resolve, reject) {
+    const currGroup = file.split('/').shift();
     fs.readFile(file, "utf8", function(err, data) {
       if (err) {
         return reject(err);
@@ -90,7 +96,7 @@ function processFile(file) {
       const ast = comments.parse(data);
       const root = ast.find(node => getLeetCodeTag(node));
 
-      resolve(root && template(root));
+      resolve(root && [template(root), currGroup]);
     });
   });
 }
