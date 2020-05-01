@@ -19,22 +19,11 @@
  * @return {boolean}
  */
 var isSameTree = function (p, q) {
-
-    if (p !== null && q === null) {
-        return false
-    } else if (p === null && q !== null) {
-        return false
-    } else if (p === null && q === null) {
+    if (p === null && q === null) {
         return true
-    } else if (p.val !== q.val) {
-        return false
-    } else if (p.left === null && q.left !== null) {
-        return false
-    } else if (p.left !== null && q.left === null) {
-        return false
-    } else if (p.right === null && q.right !== null) {
-        return false
-    } else if (p.right !== null && q.right === null) {
+    }
+
+    if ((!p || !q) || (p.val !== q.val)) {
         return false
     }
 
