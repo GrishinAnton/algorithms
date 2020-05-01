@@ -11,8 +11,28 @@ new Promise(function(resolve, reject) {
       return reject(err);
     }
     Promise.all(
-      files.filter(file => path.extname(file) === ".js").map(processFile)
-    ).then(resolve);
+      files
+        .filter(file => fs.lstatSync(file).isDirectory())
+        .map(folder => {
+          return new Promise(function(resolve, reject) {
+            fs.readdir(folder, function(err, files) {
+              if (err) {
+                return reject(err);
+              }
+              resolve(
+                files
+                  .filter(file => path.extname(file) === ".js")
+                  .map(file => path.join(folder, file))
+              );
+            });
+          });
+        })
+    )
+      .then(function(files) {
+        return Promise.all([].concat(...files).map(processFile));
+      })
+      .then(resolve)
+      .catch(reject);
   });
 })
   .then(messages => {
@@ -76,13 +96,15 @@ function processFile(file) {
 }
 
 function template(node) {
-  const title = getLeetCodeTag(node).description.split('\n').pop();
-  const parts = title.split(' ');
+  const title = getLeetCodeTag(node)
+    .description.split("\n")
+    .pop();
+  const parts = title.split(" ");
   parts.shift();
-  const id = parts.map(w => w.toLowerCase()).join('-');
+  const id = parts.map(w => w.toLowerCase()).join("-");
   return `<a href="https://leetcode.com/problems/${id}">${title}</a>`;
 }
 
 function getLeetCodeTag(node) {
-  return node.tags.find(({ title }) => title === "lc")
+  return node.tags.find(({ title }) => title === "lc");
 }
