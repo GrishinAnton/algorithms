@@ -28,8 +28,8 @@ let tt = {
     }
 }
 // [1,2,null,3,null,4,null,5]
+//Сложность O(n)
 var levelOrder = function (root) {
-    debugger
     if (!root) return []
     let result = []
     let count = 0
