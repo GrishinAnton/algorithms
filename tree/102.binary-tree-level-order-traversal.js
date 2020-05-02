@@ -29,28 +29,29 @@ let tt = {
 }
 // [1,2,null,3,null,4,null,5]
 var levelOrder = function (root) {
+    debugger
     if (!root) return []
     let result = []
     let count = 0
-    let q = [root]
+    let q = [[root, count]]
     let buffer = []
 
     while (q.length > 0) {
-        count++
         let front = q.shift()
+        let currentCount = front[1]
 
-        if (count % 2 === 0) {
+        if (count !== currentCount) {
             result.push([...buffer])
             buffer.length = 0
+            count = currentCount
         }
 
-        buffer.push(front.val)
+        buffer.push(front[0].val)
 
-        front.left && q.push(front.left)
-        front.right && q.push(front.right)
+        front[0].left && q.push([front[0].left, count + 1])
+        front[0].right && q.push([front[0].right, count + 1])
     }
     result.push([...buffer])
-
     return result
 };
 console.log(levelOrder(tt));
