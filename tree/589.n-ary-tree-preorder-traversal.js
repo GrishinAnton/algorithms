@@ -17,29 +17,19 @@
  * @param {Node} root
  * @return {number[]}
  */
+//Сложность O(n * m)
 var preorder = function (root) {
     if (!root) return null
-
+    let q = [root]
     let result = []
-    result.push(root.val)
-    let childrens = root.children
 
-    for (let i = 0; i < childrens.length; i++) {
-        let q = [childrens[i]]
-        console.log(q, 'q');
+    while (q.length > 0) {
+        let front = q.shift()
 
-
-        while (q.length > 0) {
-            let front = q.shift()
-            console.log(front, 'front');
-
-            result.push(front.val)
-            front.children && q.push(...front.children)
-        }
+        result.push(front.val)
+        front.children && q.unshift(...front.children)
     }
-
     return result
-
 };
 // @lc code=end
 
