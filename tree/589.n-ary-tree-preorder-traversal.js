@@ -19,7 +19,7 @@
  */
 //Сложность O(n * m)
 var preorder = function (root) {
-    if (!root) return null
+    if (!root) return []
     let q = [root]
     let result = []
 
