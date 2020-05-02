@@ -18,14 +18,10 @@ function numberTransfrorm(number) {
     let currentNumber = number
 
     while (currentNumber > 0) {
-        let baseNum = Math.floor(currentNumber / base)
-        let digit = currentNumber % base
-        result.push(digit)
-        currentNumber = baseNum
+        result.push(currentNumber % base)
+        currentNumber = Math.floor(currentNumber / base)
     }
-
     return result.reverse()
-
 }
 
 function selfDividing(number) {
@@ -43,9 +39,7 @@ var selfDividingNumbers = function (left, right) {
     let result = []
 
     for (let i = left; i <= right; i++) {
-        let buffer = selfDividing(i)
-
-        if (buffer) result.push(i)
+        if (selfDividing(i)) result.push(i)
     }
     return result
 };
