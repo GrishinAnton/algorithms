@@ -34,24 +34,21 @@ var levelOrder = function (root) {
     let result = []
     let count = 0
     let q = [[root, count]]
-    let buffer = []
 
     while (q.length > 0) {
         let front = q.shift()
-        let currentCount = front[1]
+        count = front[1]
 
-        if (count !== currentCount) {
-            result.push([...buffer])
-            buffer.length = 0
-            count = currentCount
+        if (result[count]) {
+            result[count].push(front[0].val)
+        } else {
+            result[count] = []
+            result[count].push(front[0].val)
         }
-
-        buffer.push(front[0].val)
 
         front[0].left && q.push([front[0].left, count + 1])
         front[0].right && q.push([front[0].right, count + 1])
     }
-    result.push([...buffer])
     return result
 };
 console.log(levelOrder(tt));
