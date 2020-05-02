@@ -9,15 +9,16 @@
  * @param {number[]} nums
  * @return {number}
  */
+//Сложность по времени O(n) сложность по памяти O(n)
 var singleNumber = function (nums) {
-    let buffer = []
+    let hash = {}
 
     for (let i = 0; i < nums.length; i++) {
-        buffer[nums[i]] = (buffer[nums[i]] || 0) + 1
+        hash[nums[i]] = (hash[nums[i]] || 0) + 1
     }
 
-    for (let j = 0; j < buffer.length; j++) {
-        if (buffer[j] === 1) return j
+    for (let item in hash) {
+        if (hash[item] === 1) return item
     }
 
 };
