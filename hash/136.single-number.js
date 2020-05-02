@@ -9,18 +9,19 @@
  * @param {number[]} nums
  * @return {number}
  */
-//Сложность по времени O(n) сложность по памяти O(n)
+//Сложность по времени O(n)
 var singleNumber = function (nums) {
-    let hash = {}
+    let lastXOR = null
 
     for (let i = 0; i < nums.length; i++) {
-        hash[nums[i]] = (hash[nums[i]] || 0) + 1
+        if (lastXOR !== null) {
+            lastXOR ^= nums[i]
+        } else {
+            lastXOR = nums[i]
+        }
     }
 
-    for (let item in hash) {
-        if (hash[item] === 1) return item
-    }
-
+    return lastXOR
 };
 // @lc code=end
 
