@@ -36,18 +36,18 @@ var levelOrder = function (root) {
     let q = [[root, count]]
 
     while (q.length > 0) {
-        let front = q.shift()
-        count = front[1]
+        let [node, level] = q.shift()
+        count = level
 
         if (result[count]) {
-            result[count].push(front[0].val)
+            result[count].push(node.val)
         } else {
             result[count] = []
-            result[count].push(front[0].val)
+            result[count].push(node.val)
         }
 
-        front[0].left && q.push([front[0].left, count + 1])
-        front[0].right && q.push([front[0].right, count + 1])
+        node.left && q.push([node.left, count + 1])
+        node.right && q.push([node.right, count + 1])
     }
     return result
 };
