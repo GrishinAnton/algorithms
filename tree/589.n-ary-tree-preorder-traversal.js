@@ -24,10 +24,10 @@ var preorder = function (root) {
     let result = []
 
     while (q.length > 0) {
-        let front = q.shift()
+        let front = q.pop()
 
         result.push(front.val)
-        front.children && q.unshift(...front.children)
+        front.children && q.push(...front.children.reverse())
     }
     return result
 };
