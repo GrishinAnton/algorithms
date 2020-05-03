@@ -11,17 +11,13 @@
  */
 //Сложность по времени O(n)
 var singleNumber = function (nums) {
-    let lastXOR = null
+    let result = 0
 
     for (let i = 0; i < nums.length; i++) {
-        if (lastXOR !== null) {
-            lastXOR ^= nums[i]
-        } else {
-            lastXOR = nums[i]
-        }
+        result ^= nums[i]
     }
 
-    return lastXOR
+    return result
 };
 // @lc code=end
 
