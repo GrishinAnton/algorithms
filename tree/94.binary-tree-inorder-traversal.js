@@ -29,28 +29,39 @@ let tt = {
 }
 //Сложность O(n)
 //Recursive
+// var inorderTraversal = function (root) {
+//     if (!root) return []
+//     let result = []
+
+//     const inorderTraversalRecurs = (root) => {
+//         if (!root) return null
+
+//         inorderTraversalRecurs(root.left)
+//         result.push(root.val)
+//         inorderTraversalRecurs(root.right)
+//     }
+
+//     inorderTraversalRecurs(root)
+
+//     return result
+// };
+// console.log(inorderTraversal(tt));
+
+//Iteratilely
 var inorderTraversal = function (root) {
     if (!root) return []
     let result = []
+    let q = [root]
 
-    const inorderTraversalRecurs = (root) => {
-        if (!root) return null
+    while (q.length > 0) {
+        let front = q.pop()
 
-        inorderTraversalRecurs(root.left)
-        result.push(root.val)
-        inorderTraversalRecurs(root.right)
+        front.left && q.push(front.left)
+        front.right && q.push(front.right)
+        result.push(front.val)
     }
-
-    inorderTraversalRecurs(root)
 
     return result
 };
-console.log(inorderTraversal(tt));
-
-//Iteratilely
-// var inorderTraversal = function(root) {
-
-
-// };
 // @lc code=end
 
