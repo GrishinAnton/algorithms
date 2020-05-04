@@ -18,24 +18,23 @@
  * @return {number}
  */
 let tt = {
-    val: 3,
-    left: { val: 9, left: null, right: null },
-    right:
-    {
-        val: 20,
-        left: { val: 15, left: null, right: null },
-        right: { val: 7, left: null, right: null }
-    }
+  val: 3,
+  left: { val: 9, left: null, right: null },
+  right:
+  {
+    val: 20,
+    left: { val: 15, left: null, right: null },
+    right: { val: 7, left: null, right: null }
+  }
 }
 //Обход в глубину
 var maxDepth = function (root) {
-    debugger
-    if (!root) return 0
+  if (!root) return 0
 
-    return 1 + Math.max(maxDepth(root.left), maxDepth(root.right));
+  return 1 + Math.max(maxDepth(root.left), maxDepth(root.right));
 
 };
-console.log(maxDepth(tt));
+// console.log(maxDepth(tt));
 //Сложность O(n)
 // Обход в ширину
 // var maxDepth = function (root) {

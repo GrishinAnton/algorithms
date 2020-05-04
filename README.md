@@ -13,6 +13,8 @@ $ npm run done
 - <a href="https://leetcode.com/problems/find-numbers-with-even-number-of-digits">[1295] Find Numbers with Even Number of Digits</a>
 - <a href="https://leetcode.com/problems/decompress-run-length-encoded-list">[1313] Decompress Run-Length Encoded List</a>
 - <a href="https://leetcode.com/problems/array-partition-i">[561] Array Partition I</a>
+### hash
+- <a href="https://leetcode.com/problems/single-number">[136] Single Number</a>
 ### number
 - <a href="https://leetcode.com/problems/subtract-the-product-and-sum-of-digits-of-an-integer">[1281] Subtract the Product and Sum of Digits of an Integer</a>
 - <a href="https://leetcode.com/problems/number-of-steps-to-reduce-a-number-to-zero">[1342] Number of Steps to Reduce a Number to Zero</a>
@@ -25,7 +27,9 @@ $ npm run done
 - <a href="https://leetcode.com/problems/unique-morse-code-words">[804] Unique Morse Code Words</a>
 ### tree
 - <a href="https://leetcode.com/problems/same-tree">[100] Same Tree</a>
+- <a href="https://leetcode.com/problems/binary-tree-level-order-traversal">[102] Binary Tree Level Order Traversal</a>
 - <a href="https://leetcode.com/problems/maximum-depth-of-binary-tree">[104] Maximum Depth of Binary Tree</a>
+- <a href="https://leetcode.com/problems/n-ary-tree-preorder-traversal">[589] N-ary Tree Preorder Traversal</a>
 - <a href="https://leetcode.com/problems/merge-two-binary-trees">[617] Merge Two Binary Trees</a>
 - <a href="https://leetcode.com/problems/flipping-an-image">[832] Flipping an Image</a>
 - <a href="https://leetcode.com/problems/range-sum-of-bst">[938] Range Sum of BST</a>
