@@ -28,22 +28,49 @@ const tt = {
     right:
     {
         val: 2,
-        left: { val: 4, left: null, right: { val: 2, left: null, right: null } },
-        right: { val: 3, left: null, right: { val: 2, left: null, right: null } }
+        left: { val: 4, left: null, right: null },
+        right: { val: 3, left: null, right: null }
     }
 }
-
-//recursively
+//Сложность по времени O(n)
+//iteratively
 var isSymmetric = function (root) {
-    // debugger
-
     if (!root) {
         return null
     }
+    let q = [[root.left, root.right]]
+    while (q.length > 0) {
+        let [leftBranch, rightBrahch] = q.shift()
 
-    return isSymmetric(root.left) === isSymmetric(root.right)
+
+        if (leftBranch === null && rightBrahch === null) continue
+        if (!leftBranch || !rightBrahch) return false
+        if (leftBranch.val !== rightBrahch.val) return false
+
+        q.push([leftBranch.left, rightBrahch.right])
+        q.push([rightBrahch.left, leftBranch.right])
+
+    }
+    return true
 };
 console.log(isSymmetric(tt));
+
+//recursively
+// var isSymmetric = function (root) {
+//     if (!root) {
+//         return null
+//     }
+
+//     const isEqual = (left, right) => {
+//         if (left === null && right === null) return true
+//         if (left === null || right === null || left.val !== right.val) return false
+
+//         return isEqual(left.left, right.right) && isEqual(right.left, left.right)
+//     }
+
+//     return isEqual(root.left, root.right)
+// };
+// console.log(isSymmetric(tt));
 
 // @lc code=end
 
