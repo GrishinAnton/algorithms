@@ -50,17 +50,22 @@ let tt = {
 //Iteratilely
 var inorderTraversal = function (root) {
     if (!root) return []
-    let result = []
-    let q = [root]
+    let result = [root.val]
+    let st = [root]
+    let q = []
 
-    while (q.length > 0) {
-        let front = q.pop()
+    while (st.length > 0) {
+        let front = st.pop()
+        q.push(front)
 
-        front.left && q.push(front.left)
-        front.right && q.push(front.right)
-        result.push(front.val)
+        front.left && st.push(front.left)
+        front.right && st.push(front.right)
     }
 
+    while (q.length - 1 > 0) {
+        let front = q.pop()
+        result.push(front.val)
+    }
     return result
 };
 // @lc code=end
