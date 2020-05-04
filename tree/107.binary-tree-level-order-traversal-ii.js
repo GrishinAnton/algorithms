@@ -37,8 +37,6 @@ let zz = {
 }
 //Рекурсия
 var levelOrderBottom = function (root) {
-    debugger
-
     if (!root) return []
     const result = []
     let count = 0
