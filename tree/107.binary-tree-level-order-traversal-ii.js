@@ -41,21 +41,28 @@ var levelOrderBottom = function (root) {
 
     if (!root) return []
     const result = []
+    let count = 0
 
-    const levelOrderBottomRecurs = (left, right) => {
-        if (!left && !right) return null
+    const levelOrderBottomRecurs = (root, count) => {
+        if (!root) return null
+        count = count
 
-        levelOrderBottomRecurs(left.left, left.right)
-        levelOrderBottomRecurs(right.left, right.right)
-        result.push([left.val, right.val])
+        root && levelOrderBottomRecurs(root.left, count + 1)
+        root && levelOrderBottomRecurs(root.right, count + 1)
+
+        if (result[count]) {
+            result[count].push([root.val])
+        } else {
+            result[count] = []
+            result[count].push([root.val])
+        }
     }
 
-    levelOrderBottomRecurs(root.left, root.right)
-    result.push([root.val])
-    return result
+    levelOrderBottomRecurs(root, count)
+    return result.reverse()
 
 };
-console.log(levelOrderBottom(zz));
+console.log(levelOrderBottom(tt));
 
 // @lc code=end
 
