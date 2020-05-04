@@ -49,24 +49,27 @@ let tt = {
 
 //Iteratilely
 var inorderTraversal = function (root) {
+
     if (!root) return []
-    let result = [root.val]
-    let st = [root]
-    let q = []
+    let result = []
+    let current = root
+    let st = []
 
-    while (st.length > 0) {
-        let front = st.pop()
-        q.push(front)
-
-        front.left && st.push(front.left)
-        front.right && st.push(front.right)
+    while (true) {
+        if (current !== null) {
+            st.push(current)
+            current = current.left
+        } else if (st.length) {
+            current = st.pop()
+            result.push(current.val)
+            current = current.right
+        } else {
+            break
+        }
     }
 
-    while (q.length - 1 > 0) {
-        let front = q.pop()
-        result.push(front.val)
-    }
     return result
 };
+console.log(inorderTraversal(tt));
 // @lc code=end
 
