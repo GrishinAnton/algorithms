@@ -20,14 +20,14 @@
 //Сложность O(n * m)
 var preorder = function (root) {
     if (!root) return []
-    let q = [root]
-    let result = []
+    const st = [root]
+    const result = []
 
-    while (q.length > 0) {
-        let front = q.pop()
+    while (st.length > 0) {
+        const front = st.pop()
 
         result.push(front.val)
-        front.children && q.push(...front.children.reverse())
+        front.children && st.push(...front.children.reverse())
     }
     return result
 };
