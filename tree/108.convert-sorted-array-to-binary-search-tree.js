@@ -18,7 +18,6 @@
  * @return {TreeNode}
  */
 var sortedArrayToBST = function (nums) {
-    console.log(nums);
 
 };
 // @lc code=end
