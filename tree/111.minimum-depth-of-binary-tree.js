@@ -28,7 +28,7 @@ let tt = {
     }
 }
 
-//Итеративный вариант
+//Итеративный вариант Сложность O(n) по памяти O(n)
 var minDepth = function (root) {
     if (!root) return []
     let minLevel = 1
