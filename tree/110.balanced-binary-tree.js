@@ -53,32 +53,5 @@ var isBalanced = root => {
 }
 console.log(isBalanced(tt));
 
-// Рекурсивно
-// var isBalanced = function (root) {
-//     // debugger
-//     if (!root) return true
-//     let leftLevel = 0
-//     let leftLevel = 0
-//     let rightLevel = 0
-//     let rightLevel = 0
-
-//     const levelDetect = (root, levelLeft, levelRight) => {
-//         if (!root) return null
-
-//         leftLevel = levelLeft
-//         rightLevel = levelRight
-
-//         root.left && levelDetect(root.left, leftLevel + 1, rightLevel)
-//         root.right && levelDetect(root.right, leftLevel, rightLevel + 1)
-//     }
-
-//     levelDetect(root.left, leftLevel + 1, rightLevel + 1)
-//     levelDetect(root.right, leftLevel + 1, rightLevel + 1)
-
-//     return true
-// };
-
-// console.log(isBalanced(tt));
-
 // @lc code=end
 
