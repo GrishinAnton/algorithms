@@ -19,48 +19,66 @@
  */
 let tt = {
     val: 3,
-    left: {
-        val: 9,
-        left: { val: 15, left: { val: 15, left: { val: 15, left: null, right: null }, right: { val: 15, left: null, right: null } }, right: null }, right: null
-    },
+    left: null,
     right: {
         val: 20,
         left: null,
-        right: null
+        right: { val: 15, left: null, right: null }
     }
 }
-// Рекурсивно
-var isBalanced = function (root) {
-    // debugger
+//Итеративно
+var isBalanced = root => {
+
     if (!root) return true
-    let leftLevel = 0
-    let leftLevel = 0
-    let rightLevel = 0
-    let rightLevel = 0
+    let levelStart = 0
+    let level = 1
+    let st = [[root, level]]
 
-    const levelDetect = (root, levelLeft, levelRight) => {
-        if (!root) return null
+    while (st.length > 0) {
+        let [front, currentLevel] = st.shift()
+        level = currentLevel
 
-        leftLevel = levelLeft
-        rightLevel = levelRight
+        if ((!front.left || !front.right) && !levelStart) {
+            levelStart = level
+        }
 
-        root.left && levelDetect(root.left, leftLevel + 1, rightLevel)
-        root.right && levelDetect(root.right, leftLevel, rightLevel + 1)
+        if (level > (levelStart + 1)) return false
+
+        front.left && st.push([front.left, level + 1])
+        front.right && st.push([front.right, level + 1])
+
     }
 
-    levelDetect(root.left, leftLevel + 1, rightLevel + 1)
-    if (Math.max(leftLevel, rightLevel) - Math.min(leftLevel, rightLevel) > 1) return false
-    leftLevel = 0
-    rightLevel = 0
-
-    levelDetect(root.right, leftLevel + 1, rightLevel + 1)
-    if (Math.max(leftLevel, rightLevel) - Math.min(leftLevel, rightLevel) > 1) return false
-
-
     return true
-};
-
+}
 console.log(isBalanced(tt));
+
+// Рекурсивно
+// var isBalanced = function (root) {
+//     // debugger
+//     if (!root) return true
+//     let leftLevel = 0
+//     let leftLevel = 0
+//     let rightLevel = 0
+//     let rightLevel = 0
+
+//     const levelDetect = (root, levelLeft, levelRight) => {
+//         if (!root) return null
+
+//         leftLevel = levelLeft
+//         rightLevel = levelRight
+
+//         root.left && levelDetect(root.left, leftLevel + 1, rightLevel)
+//         root.right && levelDetect(root.right, leftLevel, rightLevel + 1)
+//     }
+
+//     levelDetect(root.left, leftLevel + 1, rightLevel + 1)
+//     levelDetect(root.right, leftLevel + 1, rightLevel + 1)
+
+//     return true
+// };
+
+// console.log(isBalanced(tt));
 
 // @lc code=end
 
