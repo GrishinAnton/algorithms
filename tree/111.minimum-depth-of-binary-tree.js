@@ -28,29 +28,50 @@ let tt = {
     }
 }
 
-//Рекурсивный метод Сложность O(n) по памяти O(n)
+//Итеративный вариант
 var minDepth = function (root) {
-    // debugger
-
     if (!root) return []
-    let level = 0
-    let minLevel = 0
+    let minLevel = 1
+    let st = [[root, minLevel]]
 
-    const minDepthRec = (left, right, level) => {
-        if (!left && !right) {
-            minLevel = Math.min(level, minLevel ? minLevel : level)
-            return null
+    while (st.length > 0) {
+        let [front, level] = st.shift()
+
+        minLevel = level
+        if (!front.left && !front.right) {
+            return minLevel
         }
-        level = level
-
-        left && minDepthRec(left.left, left.right, level + 1)
-        right && minDepthRec(right.left, right.right, level + 1)
+        front.left && st.push([front.left, minLevel + 1])
+        front.right && st.push([front.right, minLevel + 1])
     }
 
-    minDepthRec(root.left, root.right, level + 1)
     return minLevel
 
-};
+}
+
+//Рекурсивный метод Сложность O(n) по памяти O(n)
+// var minDepth = function (root) {
+//     // debugger
+
+//     if (!root) return []
+//     let level = 0
+//     let minLevel = 0
+
+//     const minDepthRec = (left, right, level) => {
+//         if (!left && !right) {
+//             minLevel = Math.min(level, minLevel ? minLevel : level)
+//             return null
+//         }
+//         level = level
+
+//         left && minDepthRec(left.left, left.right, level + 1)
+//         right && minDepthRec(right.left, right.right, level + 1)
+//     }
+
+//     minDepthRec(root.left, root.right, level + 1)
+//     return minLevel
+
+// };
 // console.log(minDepth(tt));
 
 // @lc code=end
