@@ -48,12 +48,10 @@ var levelOrderBottom = function (root) {
         root && levelOrderBottomRecurs(root.left, count + 1)
         root && levelOrderBottomRecurs(root.right, count + 1)
 
-        if (result[count]) {
-            result[count].push([root.val])
-        } else {
+        if (!result[count]) {
             result[count] = []
-            result[count].push([root.val])
         }
+        result[count].push([root.val])
     }
 
     levelOrderBottomRecurs(root, count)
