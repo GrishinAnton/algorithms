@@ -1,4 +1,4 @@
-/*
+/**
  * @lc app=leetcode id=111 lang=javascript
  *
  * [111] Minimum Depth of Binary Tree
