@@ -32,17 +32,17 @@ let tt = {
 var minDepth = function (root) {
     if (!root) return []
     let minLevel = 1
-    let st = [[root, minLevel]]
+    let q = [[root, minLevel]]
 
-    while (st.length > 0) {
-        let [front, level] = st.shift()
+    while (q.length > 0) {
+        let [front, level] = q.shift()
 
         minLevel = level
         if (!front.left && !front.right) {
             return minLevel
         }
-        front.left && st.push([front.left, minLevel + 1])
-        front.right && st.push([front.right, minLevel + 1])
+        front.left && q.push([front.left, minLevel + 1])
+        front.right && q.push([front.right, minLevel + 1])
     }
 
     return minLevel
