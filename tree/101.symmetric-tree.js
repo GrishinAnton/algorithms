@@ -1,4 +1,4 @@
-/*
+/**
  * @lc app=leetcode id=101 lang=javascript
  *
  * [101] Symmetric Tree
