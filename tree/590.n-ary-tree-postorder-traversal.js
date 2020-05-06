@@ -19,14 +19,14 @@
  */
 var postorder = function (root) {
     if (!root) return []
-    let q = [root]
+    let st = [root]
     let result = []
 
-    while (q.length > 0) {
-        let front = q.pop()
+    while (st.length > 0) {
+        let front = st.pop()
         result.push(front.val)
 
-        front.children && q.push(...front.children)
+        front.children && st.push(...front.children)
 
     }
     return result.reverse()
