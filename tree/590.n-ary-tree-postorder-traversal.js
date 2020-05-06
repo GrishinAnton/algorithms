@@ -18,7 +18,18 @@
  * @return {number[]}
  */
 var postorder = function (root) {
+    if (!root) return []
+    let q = [root]
+    let result = []
 
+    while (q.length > 0) {
+        let front = q.pop()
+        result.push(front.val)
+
+        front.children && q.push(...front.children)
+
+    }
+    return result.reverse()
 };
 // @lc code=end
 
