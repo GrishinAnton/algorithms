@@ -14,16 +14,12 @@ var reverseString = function (s) {
     let left = 0
     let end = s.length - 1
 
-    while (end > 1) {
-        let buffer = s[left]
-        s[left] = s[end]
-        s[end] = buffer
+    while (left < end) {
+        [s[end], s[left]] = [s[left], s[end]]
         left++
         end--
     }
     return s
 };
-console.log(reverseString(["h", "e", "l", "l", "o"]));
-
 // @lc code=end
 
