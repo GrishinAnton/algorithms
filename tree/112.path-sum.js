@@ -1,4 +1,4 @@
-/*
+/**
  * @lc app=leetcode id=112 lang=javascript
  *
  * [112] Path Sum
