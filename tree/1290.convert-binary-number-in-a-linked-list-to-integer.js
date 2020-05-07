@@ -22,17 +22,10 @@
 var getDecimalValue = function (head) {
     let summ = 0
 
-    const getDecimalValueRec = root => {
-        if (!root) return null
-        let tmp = summ * 2 + root.val
+    if (!root) return null
 
-        summ = tmp
-        getDecimalValueRec(root.next)
-    }
 
-    getDecimalValueRec(head)
-
-    return summ
+    return summ * (2 + getDecimalValueRec(head.next))
 };
 // @lc code=end
 
