@@ -20,12 +20,13 @@
 // 0 x 2 + i = symm
 // summ X 2 + i = summ
 var getDecimalValue = function (head) {
-    let summ = 0
+    if (!head) return null
+    console.log(head);
 
-    if (!root) return null
+    let summ = 2 + head.val
 
 
-    return summ * (2 + getDecimalValueRec(head.next))
+    return summ * (2 + getDecimalValue(head.next))
 };
 // @lc code=end
 
