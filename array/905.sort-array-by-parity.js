@@ -11,18 +11,22 @@
  */
 //Сложность O(n) по памяти O(n)
 var sortArrayByParity = function (A) {
-    let even = []
-    let odd = []
 
-    A.map(item => {
-        if (item % 2 > 0) {
-            odd.push(item)
-        } else {
-            even.push(item)
+    let start = 0
+    let end = A.length
+
+    while (start < end) {
+        if (A[start] % 2 !== 0) {
+            [A[start + 1], A[start]] = [A[start], A[start + 1]]
         }
-    })
+        if (A[end] % 2 === 0) {
+            [A[end], A[end - 1]] = [A[end - 1], A[end]]
+        }
+        start++
+        end--
+    }
 
-    return [...even, ...odd]
+    return A
 };
 // @lc code=end
 
