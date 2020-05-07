@@ -9,19 +9,21 @@
  * @param {number[]} A
  * @return {number[]}
  */
-//Сложность O(n) по памяти O(n)
+//Сложность O(n)
 var sortArrayByParity = function (A) {
-
+    if (A.length <= 1) return A
     let start = 0
-    let end = A.length
+    let end = A.length - 1
 
     while (start < end) {
-        if (A[start] % 2 !== 0) {
-            [A[start + 1], A[start]] = [A[start], A[start + 1]]
+        while (A[start] % 2 === 0 && start < end) {
+            start++
         }
-        if (A[end] % 2 === 0) {
-            [A[end], A[end - 1]] = [A[end - 1], A[end]]
+        while (A[end] % 2 !== 0 && start < end) {
+            end--
         }
+
+        [A[end], A[start]] = [A[start], A[end]]
         start++
         end--
     }
