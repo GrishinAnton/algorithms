@@ -18,6 +18,7 @@
  * @param {number} val
  * @return {TreeNode}
  */
+//Сложность О(n)
 var searchBST = function (root, val) {
     if (!root) return []
     if (root.val === val) return root
