@@ -9,8 +9,19 @@
  * @param {number[][]} points
  * @return {number}
  */
-var minTimeToVisitAllPoints = function(points) {
-    
+//Сложность O(n) 
+var minTimeToVisitAllPoints = function (points) {
+    let timeResult = 0
+    let startPoints = points[0]
+
+    for (let i = 1; i < points.length; i++) {
+        let [x, y] = points[i]
+        timeResult += Math.max(Math.abs(x - startPoints[0]), Math.abs(y - startPoints[1]))
+        startPoints = points[i]
+    }
+
+    return timeResult
+
 };
 // @lc code=end
 
