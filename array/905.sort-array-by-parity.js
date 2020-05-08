@@ -1,4 +1,4 @@
-/*
+/**
  * @lc app=leetcode id=905 lang=javascript
  *
  * [905] Sort Array By Parity
@@ -24,8 +24,7 @@ var sortArrayByParity = function (A) {
         }
 
         [A[end], A[start]] = [A[start], A[end]]
-        start++
-        end--
+
     }
 
     return A
