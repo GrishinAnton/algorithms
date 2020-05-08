@@ -20,24 +20,11 @@
  */
 //Сложность О(n)
 var searchBST = function (root, val) {
-    if (!root) return []
+    if (!root) return null
     if (root.val === val) return root
-    let result = null
 
-    const searchBSTRec = root => {
-        if (!root) return null
 
-        if (root.val === val) result = root
-
-        root.left && searchBSTRec(root.left)
-        root.right && searchBSTRec(root.right)
-
-    }
-
-    searchBSTRec(root.left)
-    searchBSTRec(root.right)
-
-    return result
+    return searchBST(root.left, val) || searchBST(root.right, val)
 };
 // @lc code=end
 
