@@ -13,6 +13,7 @@ $ npm run done
 - <a href="https://leetcode.com/problems/minimum-time-visiting-all-points">[1266] Minimum Time Visiting All Points</a>
 - <a href="https://leetcode.com/problems/find-numbers-with-even-number-of-digits">[1295] Find Numbers with Even Number of Digits</a>
 - <a href="https://leetcode.com/problems/decompress-run-length-encoded-list">[1313] Decompress Run-Length Encoded List</a>
+- <a href="https://leetcode.com/problems/reverse-words-in-a-string-iii">[557] Reverse Words in a String III</a>
 - <a href="https://leetcode.com/problems/array-partition-i">[561] Array Partition I</a>
 - <a href="https://leetcode.com/problems/sort-array-by-parity">[905] Sort Array By Parity</a>
 ### hash
@@ -23,7 +24,6 @@ $ npm run done
 ### string
 - <a href="https://leetcode.com/problems/defanging-an-ip-address">[1108] Defanging an IP Address</a>
 - <a href="https://leetcode.com/problems/split-a-string-in-balanced-strings">[1221] Split a String in Balanced Strings</a>
-- <a href="https://leetcode.com/problems/reverse-words-in-a-string-iii">[557] Reverse Words in a String III</a>
 - <a href="https://leetcode.com/problems/robot-return-to-origin">[657] Robot Return to Origin</a>
 - <a href="https://leetcode.com/problems/to-lower-case">[709] To Lower Case</a>
 - <a href="https://leetcode.com/problems/jewels-and-stones">[771] Jewels and Stones</a>
@@ -39,6 +39,7 @@ $ npm run done
 - <a href="https://leetcode.com/problems/n-ary-tree-preorder-traversal">[589] N-ary Tree Preorder Traversal</a>
 - <a href="https://leetcode.com/problems/n-ary-tree-postorder-traversal">[590] N-ary Tree Postorder Traversal</a>
 - <a href="https://leetcode.com/problems/merge-two-binary-trees">[617] Merge Two Binary Trees</a>
+- <a href="https://leetcode.com/problems/search-in-a-binary-search-tree">[700] Search in a Binary Search Tree</a>
 - <a href="https://leetcode.com/problems/flipping-an-image">[832] Flipping an Image</a>
 - <a href="https://leetcode.com/problems/range-sum-of-bst">[938] Range Sum of BST</a>
 - <a href="https://leetcode.com/problems/binary-tree-inorder-traversal">[94] Binary Tree Inorder Traversal</a>
