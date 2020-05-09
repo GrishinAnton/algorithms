@@ -21,12 +21,9 @@
 // summ X 2 + i = summ
 var getDecimalValue = function (head) {
     if (!head) return null
-    console.log(head);
+    if (!head.next) return head.val
 
-    let summ = 2 + head.val
-
-
-    return summ * (2 + getDecimalValue(head.next))
+    return head.val * (2 + getDecimalValue(head.next))
 };
 // @lc code=end
 
