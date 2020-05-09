@@ -18,13 +18,13 @@
  * @param {number} val
  * @return {TreeNode}
  */
-//Сложность О(n)
+//Сложность О(log n)
 var searchBST = function (root, val) {
     if (!root) return null
     if (root.val === val) return root
 
 
-    return searchBST(root.left, val) || searchBST(root.right, val)
+    return root.val < val ? searchBST(root.right, val) : searchBST(root.left, val)
 };
 // @lc code=end
 
