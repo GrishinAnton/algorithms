@@ -18,30 +18,17 @@
  * @param {number} sum
  * @return {boolean}
  */
-var hasPathSum = function (root, sum) {
-    console.log(sum, 'sssss');
+//Сложность O(n)
+var hasPathSum = function (root, sum, val = 0) {
+    if (!root) return false
+    if (val + root.val === sum && !root.left && !root.right) return true
 
-    if (!root) return []
-    let summ = root.val
-    let flag = false
+    val += root.val
 
-    const summRec = (root) => {
-        if (!root.left && !root.right) {
-            if ((summ + root.val) === sum) {
-                flag = true
-            }
-            return null
-        }
-        summ += root.val
 
-        root.left && summRec(root.left)
-        root.right && summRec(root.right)
-    }
-    root.left && summRec(root.left)
-    summ = root.val
-    root.right && summRec(root.right)
-
-    return flag
+    return hasPathSum(root.left, sum, val) || hasPathSum(root.right, sum, val)
 };
+// console.log(hasPathSum(tt, 22));
+
 // @lc code=end
 
