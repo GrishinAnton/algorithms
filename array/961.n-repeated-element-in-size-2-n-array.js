@@ -11,23 +11,17 @@
  */
 var repeatedNTimes = function (A) {
 
-    let buffer = []
-    let maxNumber = 0
-    let indexMaxNumber = 0
+    let hashmaps = []
 
     for (let i = 0; i < A.length; i++) {
-        buffer[A[i]] = (buffer[A[i]] || 0) + 1
+        hashmaps[A[i]] = (hashmaps[A[i]] || 0) + 1
     }
-    console.log(buffer);
-    for (let k = 0; k < buffer.length; k++) {
-        if (buffer[k]) {
-            if (maxNumber < buffer[k]) {
-                maxNumber = buffer[k]
-                indexMaxNumber = k
-            }
+
+    for (let k = 0; k < hashmaps.length; k++) {
+        if (A.length / 2 === hashmaps[k]) {
+            return k
         }
     }
-    return indexMaxNumber
 };
 // @lc code=end
 
