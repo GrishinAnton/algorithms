@@ -8,8 +8,8 @@ var destCity = function (paths) {
 
     for (let i = 0; i < paths.length; i++) {
         let [o, inp] = paths[i]
-        output[o] = {} = 1
-        input[inp] = {} = 1
+        output[o] = 1
+        input[inp] = 1
     }
 
     for (let out in input) {
