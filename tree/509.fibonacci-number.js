@@ -20,12 +20,15 @@
  */
 //Итеративно
 var fib = function (N) {
+    if (N === 0) return 0
     let count = 1
     let result = 1
 
-    for (let i = 2; i < N; i++) {
+    for (let i = 3; i <= N; i++) {
+        let summ = count + result
+        count = result
+        result = summ
 
-        result += count
     }
     return result
 }
