@@ -18,16 +18,22 @@
  * @param {number} sum
  * @return {boolean}
  */
-//Сложность O(n)
-var hasPathSum = function (root, sum, val = 0) {
+var hasPathSum = function (root, sum) {
     if (!root) return false
-    if (val + root.val === sum && !root.left && !root.right) return true
+    if (root.val === sum && !root.left && !root.right) return true
 
-    val += root.val
+    return hasPathSum(root.left, sum - root.val) || hasPathSum(root.right, sum - root.val)
+}
+//Сложность O(n)
+// var hasPathSum = function (root, sum, val = 0) {
+//     if (!root) return false
+//     if (val + root.val === sum && !root.left && !root.right) return true
+
+//     val += root.val
 
 
-    return hasPathSum(root.left, sum, val) || hasPathSum(root.right, sum, val)
-};
+//     return hasPathSum(root.left, sum, val) || hasPathSum(root.right, sum, val)
+// };
 // console.log(hasPathSum(tt, 22));
 
 // @lc code=end
