@@ -9,7 +9,7 @@
  * @param {number} num
  * @return {number}
  */
-//Сложность О(n) по помаяти O(n)
+//Сложность О(n) по памяти O(n)
 function numberTransform(number) {
     let base = 10
     let current = number
