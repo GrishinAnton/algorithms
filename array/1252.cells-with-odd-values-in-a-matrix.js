@@ -43,7 +43,7 @@
 //     return result
 
 // };
-//Сложность  О(n * m)
+//O(k + n * m) и O(n + m)
 var oddCells = function (n, m, indices) {
 
     let result = 0
