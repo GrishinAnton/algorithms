@@ -48,19 +48,13 @@ var sortedSquares = function (A) {
     let result = []
     const minIndex = findIndexOfMin(A)
 
-    let min = minIndex
-    let max = minIndex + 1 > A.length - 1 ? A.length - 1 : minIndex + 1
+    let min = minIndex - 1
+    let max = minIndex + 1
+
 
     while (min > 0 || max < A.length - 1) {
 
-        const minSqr = A[min] ** 2
-        const maxSqr = A[max] ** 2
 
-        min >= 0 && result.push(Math.min(minSqr, maxSqr))
-        max <= A.length - 1 && result.push(Math.max(minSqr, maxSqr))
-
-        min > 0 && min--
-        max < A.length - 1 && max++
     }
 
     return result
