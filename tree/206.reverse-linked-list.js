@@ -62,8 +62,7 @@ var reverseList = function (head) {
         current = next
     }
 
-    head = prev
-    return head
+    return prev
 }
 // @lc code=end
 
