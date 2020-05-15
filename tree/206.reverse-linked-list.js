@@ -23,32 +23,47 @@ function ListNode(val, next) {
 
 // function getHeight
 
+// var reverseList = function (head) {
+//     if (!head) return null
+//     let valBuffer = [head.val]
+
+
+//     const reverseRec = next => {
+//         if (!next) return null
+//         valBuffer.push(next.val)
+//         reverseRec(next.next)
+//     }
+
+//     const generateList = () => {
+//         if (!valBuffer.length) return null
+
+//         const element = valBuffer.pop()
+//         let root = {}
+//         root = new ListNode(element)
+//         root.next = generateList()
+
+//         return root
+
+//     }
+
+//     reverseRec(head.next)
+
+//     return generateList()
+// };
 var reverseList = function (head) {
-    if (!head) return null
-    let valBuffer = [head.val]
+    let prev = null
+    let next = null
+    let current = head
 
-
-    const reverseRec = next => {
-        if (!next) return null
-        valBuffer.push(next.val)
-        reverseRec(next.next)
+    while (current) {
+        next = current.next
+        current.next = prev
+        prev = current
+        current = next
     }
 
-    const generateList = () => {
-        if (!valBuffer.length) return null
-
-        const element = valBuffer.pop()
-        let root = {}
-        root = new ListNode(element)
-        root.next = generateList()
-
-        return root
-
-    }
-
-    reverseRec(head.next)
-
-    return generateList()
-};
+    head = prev
+    return head
+}
 // @lc code=end
 
