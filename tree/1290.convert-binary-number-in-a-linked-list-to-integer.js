@@ -39,10 +39,9 @@
 //  0   1   0   1
 // 2:3 2:2 2:1 2:0
 var getDecimalValue = function (head, height = getHeight(head) - 1) {
-    if (!head) return null
-    if (head.val !== 1) return getDecimalValue(head.next, height - 1)
+    if (!head) return 0
 
-    return 2 ** height + getDecimalValue(head.next, height - 1)
+    return head.val * 2 ** height + getDecimalValue(head.next, height - 1)
 };
 
 function getHeight(head) {
